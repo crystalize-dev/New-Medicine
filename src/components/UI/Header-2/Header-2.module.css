@@ -1,0 +1,37 @@
+.header2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 3%;
+
+    width: 100%;
+    height: calc(40px + 5vh);
+
+    background: teal;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.linksArea {
+    list-style: none;
+
+    display: flex;
+}
+
+.linksArea li:not(:first-child) {
+    margin-left: 10%;
+}
+
+.linksArea li {
+    color: white;
+    cursor: pointer;
+
+    font-size: calc(14px + 4 * (100vw / 1280));
+}
+
+
+@media (min-width: 2000px) {
+    .header-2 {
+        width: 1920px;
+    }
+}
