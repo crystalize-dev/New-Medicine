@@ -7,8 +7,19 @@ const Header2 = () => {
     return (
         <div className={cl.header2}>
             <ul className={cl.linksArea}>
-                <li>Home</li>
-                <li>Pages</li>
+                <li>
+                    Home
+                    <div className={cl.slider}/>
+                </li>
+                <li className={cl.pagesLink}>
+                    Pages
+                    <Icon>expand_more</Icon>
+                    <div className={cl.dropDownList}>
+                        <div className={cl.dropElem}><a href="#">About us</a></div>
+                        <div className={cl.dropElem}><a href="#">Testimonials</a></div>
+                        <div className={cl.dropElem}><a href="#">Our blog</a></div>
+                    </div>
+                </li>
                 <li>Departments</li>
                 <li>Contact</li>
                 <li>News</li>
