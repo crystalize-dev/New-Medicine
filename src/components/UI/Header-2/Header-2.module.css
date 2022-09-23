@@ -5,6 +5,7 @@
 
     padding: 0 3%;
 
+    min-width: 750px;
     width: 100%;
     height: calc(40px + 5vh);
 
@@ -124,7 +125,7 @@
 .menu {
     position: absolute;
     top: calc(100% - 1px);
-    right: 0;
+    right: -100%;
 
     width: 1200%;
     height: fit-content;
@@ -147,7 +148,8 @@
     transition: all 0.3s ease 0s;
 
     color: white;
-    font-size: 20px;
+    font-size: 18px;
+    font-variant: small-caps;
 }
 
 .logElem:hover {

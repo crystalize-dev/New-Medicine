@@ -4,8 +4,7 @@ import Icon from "../iconELem/Icon";
 import classes from "classnames";
 
 
-const Header2 = () => {
-    const [active, setActive] = useState(false);
+const Header2 = ({active, setActive, setModal}) => {
 
     useEffect(() => {
         console.log("pzdc - ", active)
@@ -34,10 +33,12 @@ const Header2 = () => {
             </ul>
 
             <div className={cl.menuIcon}>
-                <Icon color={"white"} transform={1.3} onClick={() => setActive(!active)}>menu</Icon>
+                <Icon color={"white"} transform={1.3} onClick={() => setActive(!active)}>{active ? "expand_less" : "menu"}</Icon>
                 <div className={active ? cl.menu : classes(cl.menu, cl.invisible)}>
-                    <div className={active ? cl.logElem : classes(cl.logElem, cl.invisible)}>Sign in</div>
-                    <div className={active ? cl.logElem : classes(cl.logElem, cl.invisible)}>Sign up</div>
+                    <div className={active ? cl.logElem : classes(cl.logElem, cl.invisible)}
+                         onClick={() => setModal(true)}>SIGN IN</div>
+                    <div className={active ? cl.logElem : classes(cl.logElem, cl.invisible)}
+                         onClick={() => setModal(true)}>SIGN UP</div>
                 </div>
             </div>
         </div>
