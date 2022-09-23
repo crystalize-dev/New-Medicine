@@ -17,12 +17,12 @@ const Header1 = () => {
             </div>
 
             <div className={cl.location}>
-                <Icon color={"teal"} transform={1.5}>location_on</Icon>
+                <Icon color={"#3155aa"} transform={1.5}>location_on</Icon>
                 <p className={cl.address}>Moscow, Krasniy Kazanec, 15k1</p>
             </div>
 
             <div className={cl.schedule}>
-                <Icon color={"teal"} transform={1.5}>schedule</Icon>
+                <Icon color={"#3155aa"} transform={1.5}>schedule</Icon>
                 <p>Work days - 8:00 - 21:00
                     Sunday - 8:00 - 14:00</p>
             </div>
