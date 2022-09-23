@@ -1,4 +1,3 @@
 # ToDo:
-- Menu icon fix size
-- button resposive
-- login modal
+- Dark Theme
+- Mobile version
