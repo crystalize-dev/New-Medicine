@@ -2,9 +2,11 @@ import "./app.css";
 import back from "./img/back.png";
 import Header1 from "./components/UI/header-1/header-1";
 import Header2 from "./components/UI/Header-2/Header-2";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import LoginModal from "./components/UI/LoginModal/LoginModal";
-import {ThemeContext} from "./context/context";
+import {LanguageContext, ThemeContext} from "./context/context";
+import {checkForLocalStorage} from "./utility/checkForLocalStorage";
+import MainPage from "./pages/mainPage/mainPage";
 
 
 function App() {
@@ -12,35 +14,39 @@ function App() {
     const [modal, setModal] = useState(false);
 
     const [theme, setTheme] = useState('light');
+    const [language, setLanguage] = useState('russian')
 
     const toggleTheme = () => {
-        setTheme((curr) => curr === 'light' ? "dark" : "light");
+        const switchTheme = (curr) => curr === 'light' ? "dark" : "light";
+
+        let newTheme = switchTheme(theme);
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
     }
 
+    const toggleLanguage = (language) => {
+        setLanguage(language);
+        localStorage.setItem('language', language)
+    }
+
+    useEffect(() => {
+        checkForLocalStorage(setTheme, setLanguage)
+    }, [])
+
+
     return (
-        <ThemeContext.Provider value={{theme, toggleTheme}}>
-            <div id={theme} className="wrapper">
-                <Header1/>
-                <Header2 active={active} setActive={setActive} setModal={setModal}/>
+        <LanguageContext.Provider value={{language, toggleLanguage}}>
+            <ThemeContext.Provider value={{theme, toggleTheme}}>
+                <div id={theme} className="wrapper">
+                    <Header1/>
+                    <Header2 active={active} setActive={setActive} setModal={setModal}/>
 
-                <LoginModal modal={modal} setModal={setModal}/>
+                    <LoginModal modal={modal} setModal={setModal}/>
 
-                <div className="main-area" onClick={() => setActive(false)}>
-                    <div className="text-area">
-                        <div>
-                            <h1>Genius Medics<span className="gradient">Speciality Healthcare</span></h1>
-                            <h2>Et dolor vulputate non ornare velit vitae malesuada venenatis sapien lectus lorem vulputate
-                                ut. Cursus molestie ut. Tempus orci, vulputat.</h2>
-                        </div>
-                        <button className="main_btn" onClick={() => setModal(true)}>Make an appointment</button>
-                    </div>
-
-                    <div className="photo-area">
-                        <img src={back} alt="consultation"/>
-                    </div>
+                    <MainPage setActive={setActive} setModal={setModal}/>
                 </div>
-            </div>
-        </ThemeContext.Provider>
+            </ThemeContext.Provider>
+        </LanguageContext.Provider>
     );
 }
 

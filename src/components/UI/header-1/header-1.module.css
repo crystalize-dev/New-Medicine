@@ -78,6 +78,10 @@
     color: var(--main-color);
 }
 
+.schedule p[data-laguage='russian'] {
+    width: 220px;
+}
+
 @media (min-width: 2000px) {
     .header1 {
         width: 1920px;

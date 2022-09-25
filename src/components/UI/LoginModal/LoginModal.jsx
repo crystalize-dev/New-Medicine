@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import cl from "./LoginModal.css";
 import classes from "classnames";
 import Icon from "../iconELem/Icon";
+import {LanguageContext} from "../../../context/context";
 
 
 const LoginModal = ({modal, setModal}) => {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
+
+    const {language} = useContext(LanguageContext);
 
     const auth = (e) => {
         e.preventDefault();
@@ -26,13 +29,13 @@ const LoginModal = ({modal, setModal}) => {
 
                 <form className="mainArea" onSubmit={(e) => auth(e)}>
                     <div>
-                        <input placeholder={"Enter Login"} type="text"
+                        <input placeholder={language === 'russian' ? "Введите логин" : "Enter Login"} type="text"
                                value={login} onChange={(e) => setLogin(e.target.value)}/>
-                        <input placeholder={"Enter Password"} type="password"
+                        <input placeholder={language === 'russian' ? "Введите пароль" : "Enter Password"} type="password"
                                value={password} onChange={(e) => setPassword(e.target.value)}/>
                     </div>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit">{language === 'russian' ? "Войти" : "Submit"}</button>
                 </form>
             </div>
         </div>
