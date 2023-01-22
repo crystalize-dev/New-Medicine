@@ -1,52 +1,25 @@
 import "./app.css";
-import back from "./img/back.png";
-import Header1 from "./components/UI/header-1/header-1";
+import Header1 from "./components/UI/Header-1/header-1";
 import Header2 from "./components/UI/Header-2/Header-2";
-import {useEffect, useState} from "react";
-import LoginModal from "./components/UI/LoginModal/LoginModal";
-import {LanguageContext, ThemeContext} from "./context/context";
-import {checkForLocalStorage} from "./utility/checkForLocalStorage";
-import MainPage from "./pages/mainPage/mainPage";
+import Slider from "./components/UI/slider/slider";
+import Card from "./components/UI/card/card";
 
 
 function App() {
-    const [active, setActive] = useState(false);
-    const [modal, setModal] = useState(false);
-
-    const [theme, setTheme] = useState('light');
-    const [language, setLanguage] = useState('russian')
-
-    const toggleTheme = () => {
-        const switchTheme = (curr) => curr === 'light' ? "dark" : "light";
-
-        let newTheme = switchTheme(theme);
-        setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-    }
-
-    const toggleLanguage = (language) => {
-        setLanguage(language);
-        localStorage.setItem('language', language)
-    }
-
-    useEffect(() => {
-        checkForLocalStorage(setTheme, setLanguage)
-    }, [])
-
-
     return (
-        <LanguageContext.Provider value={{language, toggleLanguage}}>
-            <ThemeContext.Provider value={{theme, toggleTheme}}>
-                <div id={theme} className="wrapper">
-                    <Header1/>
-                    <Header2 active={active} setActive={setActive} setModal={setModal}/>
+        <div className="wrapper">
+            <Header1/>
+            <Header2/>
 
-                    <LoginModal modal={modal} setModal={setModal}/>
-
-                    <MainPage setActive={setActive} setModal={setModal}/>
-                </div>
-            </ThemeContext.Provider>
-        </LanguageContext.Provider>
+            <Slider />
+            <div className="cardArea">
+                <Card icon={"medical_services"} header={"График работы врачей"} text={"Мы сделали для вас удобный режим работы"}/>
+                <Card icon={"stethoscope"} header={"Направления"} text={"Мы работает по многим направлениям!"}/>
+                <Card icon={"home_health"} header={"Записаться на приём"} buttonText={"Записаться"} text={"Запишитесь онлайн"}/>
+                <Card icon={"schedule"} header={"Время работы"} withButton={false}
+                      alterText={"Пн.-пт.             8:00 - 21:00\nСуббота           8:00 - 20:00\nВоскресенье  9:00 - 18:00"}/>
+            </div>
+        </div>
     );
 }
 

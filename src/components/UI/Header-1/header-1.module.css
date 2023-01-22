@@ -1,0 +1,120 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+
+    width: 100%;
+    height: 50px;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: fit-content;
+    min-width: fit-content;
+    height: 100%;
+    list-style: none;
+}
+.socials img {
+    width: 35px;
+    height: 35px;
+
+    filter: grayscale(1) opacity(0.5);
+    cursor: pointer;
+    transition: filter 0.3s ease 0s;
+}
+.socials img:hover {
+    filter: grayscale(0) opacity(1);
+}
+
+.sideInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    width: fit-content;
+    min-width: fit-content;
+    height: 100%;
+}
+.sideInfo p {
+    color: var(--main-color);
+    font-weight: bold;
+}
+.sideInfo p span {
+    color: var(--inactive-color);
+    font-weight: normal;
+}
+.sideInfo hr {
+    height: 40%;
+
+    border: none;
+    border-left: 1px solid black;
+}
+
+.inputWrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+    min-width: fit-content;
+
+    height: 100%;
+}
+.icon {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+
+    transform: scale(0.9);
+    transition: all 0.3s ease 0s;
+
+    z-index: 99999;
+}
+.icon:hover {
+    transform: scale(1);
+}
+.inactiveIcon {
+    transform: scale(0.8) !important;
+    color: var(--inactive-color);
+}
+.searchInput {
+    width: 250px;
+    height: 30px;
+    padding: 0 30px 0 5px;
+
+    outline: none;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+
+    transition: all 0.3s ease 0s;
+    filter: opacity(1);
+    pointer-events: all;
+}
+.inactiveInput {
+    width: 0;
+    pointer-events: none;
+    filter: opacity(0);
+}
+
+.sideInfo button {
+    width: fit-content;
+    height: 70%;
+    padding: 10px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease 0s;
+    font-weight: 500;
+}
+.sideInfo button:hover {
+    background: var(--main-color);
+    color: white;
+}

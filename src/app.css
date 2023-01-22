@@ -1,83 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Nabla&family=Open+Sans:wght@400;800&family=Oswald:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
 @import-normalize;
 
 * {
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 #root {
-    --main-color: #3155aa;
-    --darker-main-color: #213a72;
-    --second-color: #012789;
-
-    --DarkTheme: #282c2f;
-    --LightTheme: #edf1f4;
+    --main-color: #4ca2cb;
+    --main-color-darker: #3182a2;
+    --background: #edf1f4;
+    --inactive-color: #9e9ea2;
+    --lighterGray-color: #f5f5f6;
+    --lighterBlack-color: #3b3b3b;
 }
-
 img {
     user-select: none;
 }
-
 a {
-    color: white;
     text-decoration: none;
 }
-
-#light {
-    background: var(--LightTheme);
-}
-
-#dark {
-    background: var(--DarkTheme);
-}
-
 .wrapper {
-    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-width: 1300px;
+    height: 100%;
+
+    background: var(--background);
 }
 
-.gradient {
-    background: linear-gradient(to right, #173257, #065a94, #91c642);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+.cardArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 
-#dark .gradient {
-    background: linear-gradient(to right, #3d82e1, #0c9aff, #bbff58);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/*Для широкоформатных моников*/
-@media (min-width: 2000px) {
-    .wrapper {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-}
-
-
-::-webkit-scrollbar {
-    width: 10px;
-
-    background: var(--DarkTheme);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--main-color);
-    border-radius: 10px;
-}
-
-/*Гугл иконки*/
-.material-symbols-outlined {
-    font-variation-settings: 'FILL' 1,
-    'wght' 700,
-    'GRAD' 0,
-    'opsz' 48
+    width: 100%;
+    flex-grow: 1;
 }

@@ -1,0 +1,95 @@
+.wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 450px;
+
+    background: var(--lighterGray-color);
+    z-index: 10;
+}
+.arrow {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+
+    top: 50%;
+    transform: translateY(-100%);
+
+    transition: background 0.3s ease 0s;
+    cursor: pointer;
+    z-index: 13;
+}
+.arrowLeft {
+    left: 50px;
+    padding-left: 6px;
+}
+.arrowRight {
+    right: 50px;
+}
+.arrow:hover {
+    background: black;
+}
+
+.switchWrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-100%);
+
+    display: flex;
+    gap: 5px;
+
+    width: fit-content;
+    height: fit-content;
+
+    padding: 5px;
+    z-index: 13;
+}
+.switch {
+    width: 13px;
+    height: 13px;
+
+    background: var(--lighterGray-color);
+    border: 1px solid var(--lighterGray-color);
+
+    cursor: pointer;
+    transition: background 0.1s ease 0s;
+}
+.switchActive {
+    background: black;
+}
+
+.window {
+    position: absolute;
+    top: 0;
+    left:0;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 12;
+    overflow: hidden;
+}
+.window > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 120%;
+    height: 120%;
+
+    z-index: 10;
+    filter: blur(20px);
+}
