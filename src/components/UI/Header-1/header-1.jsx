@@ -20,8 +20,8 @@ const Header1 = () => {
 
                 <div className={cl.sideInfo}>
                     <p><span>Позвоните нам!</span> +7(800)-555-35-35</p>
-                    <hr/>
-                    <p>someEmail@mail.ru</p>
+                    <hr className={cl.email}/>
+                    <p className={cl.email}>someEmail@mail.ru</p>
 
                     <div className={cl.inputWrapper}>
                         <Icon className={inputActive ? classNames(cl.icon, cl.inactiveIcon) : cl.icon} onClick={() => setInputActive(!inputActive)}>

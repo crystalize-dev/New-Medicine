@@ -15,8 +15,9 @@
 }
 
 .wrapper > img {
-    width: fit-content;
-    height: 400px;
+    width: 40%;
+    height: 90%;
+    object-fit: contain;
 }
 
 .textArea {
@@ -25,7 +26,7 @@
     gap: 20px;
 
     height: 50%;
-    width: 550px;
+    width: 50%;
 }
 .textArea h1 {
     margin-left: 20px;
@@ -43,6 +44,7 @@
 .textArea button {
     width: 150px;
     height: 55px;
+    min-height: 55px;
 
     border: none;
     outline: none;
@@ -55,4 +57,31 @@
 
     cursor: pointer;
     margin-top: auto;
+
+    transition: all 0.3s ease 0s;
+}
+.textArea button:hover {
+    color: var(--main-color-darker);
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 750px) {
+    .wrapper > img {
+        display: none;
+    }
+
+    .textArea h1 {
+        margin-left: unset
+    }
+
+    .textArea {
+        text-align: center;
+        width: 60%;
+        height: 60%;
+    }
+
+    .textArea button {
+        align-self: center;
+    }
 }

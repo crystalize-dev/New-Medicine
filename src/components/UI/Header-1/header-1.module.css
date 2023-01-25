@@ -43,6 +43,7 @@
 .sideInfo p {
     color: var(--main-color);
     font-weight: bold;
+    white-space: nowrap;
 }
 .sideInfo p span {
     color: var(--inactive-color);
@@ -123,4 +124,22 @@
 .sideInfo button:hover {
     background: var(--main-color);
     color: white;
+}
+
+
+@media (max-width: 1050px) {
+    .socials, .inputWrapper, .email {
+            display: none;
+        }
+
+    .header {
+        justify-content: center;
+    }
+
+    .sideInfo hr {
+        height: 40%;
+
+        border: none;
+        border-left: 1px solid black;
+    }
 }
