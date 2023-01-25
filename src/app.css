@@ -48,8 +48,10 @@ a {
 
     width: 100%;
     height: calc(30% - 120px);
-    min-height: 330px;
+    min-height: 300px;
 }
+
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
