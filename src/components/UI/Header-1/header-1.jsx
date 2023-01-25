@@ -1,14 +1,17 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import cl from "./header-1.module.css";
 import facebook from "../../../img/social/face.png"
 import vk from "../../../img/social/vk.png"
 import telegram from "../../../img/social/telegram.png"
 import Icon from "../icon/Icon";
 import classNames from "classnames";
+import {LoginContext} from "../../../context/loginContext";
 
 
 const Header1 = () => {
     const [inputActive, setInputActive] = useState(false)
+
+    const {setModal: viewModal} = useContext(LoginContext);
 
     return (
         <header className={cl.header}>
@@ -30,9 +33,9 @@ const Header1 = () => {
                         <input className={inputActive ? cl.searchInput : classNames(cl.searchInput, cl.inactiveInput)} placeholder={"Найти"}/>
                     </div>
 
-                    <button>Вход</button>
+                    <button onClick={() => viewModal("login")}>Вход</button>
                     <hr/>
-                    <button>Регистрация</button>
+                    <button onClick={() => viewModal("register")}>Регистрация</button>
                 </div>
         </header>
     );

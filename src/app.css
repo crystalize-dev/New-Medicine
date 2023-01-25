@@ -9,7 +9,6 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
 #root {
     --main-color: #4ca2cb;
     --main-color-darker: #3182a2;
@@ -24,6 +23,8 @@ img, button {
 a {
     text-decoration: none;
 }
+
+
 .wrapper {
     position: absolute;
     top: 0;
@@ -33,7 +34,7 @@ a {
     flex-direction: column;
 
     width: 100%;
-    height: 100%;
+    height: fit-content;
 }
 
 .cardArea {
@@ -43,6 +44,7 @@ a {
     flex-wrap: wrap;
 
     gap: 20px;
+
     padding: 20px;
 }
 
