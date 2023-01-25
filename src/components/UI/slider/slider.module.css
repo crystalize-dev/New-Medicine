@@ -80,17 +80,7 @@
     width: 100%;
     height: 100%;
 
+    background: var(--main-color-darker);
     z-index: 12;
     overflow: hidden;
-}
-.window > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 120%;
-    height: 120%;
-
-    z-index: 10;
-    filter: blur(20px);
 }

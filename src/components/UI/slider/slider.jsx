@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import cl from "./slider.module.css"
 import Icon from "../icon/Icon";
 import classNames from "classnames";
-import background from "../../../img/slider/sliderBackground.jpg"
 import SlideElem from "../slideElem/slideElem";
 import {slidesScheme} from "./slides";
 
@@ -44,8 +43,6 @@ const Slider = () => {
                                img={slideElem.img}
                                description={slideElem.description}/>)
                 }
-
-                <img alt={"background"} src={background}/>
             </div>
 
             <div className={cl.switchWrapper}>
