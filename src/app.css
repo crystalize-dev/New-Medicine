@@ -13,7 +13,7 @@
 #root {
     --main-color: #4ca2cb;
     --main-color-darker: #3182a2;
-    --background: #edf1f4;
+    --background: #f4eded;
     --inactive-color: #9e9ea2;
     --lighterGray-color: #f5f5f6;
     --lighterBlack-color: #3b3b3b;
@@ -44,7 +44,18 @@ a {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    padding: 20px 0;
 
     width: 100%;
-    flex-grow: 1;
+    height: calc(30% - 120px);
+    min-height: 330px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #4ca2cb;
+    border: 1px solid #f4eded;
+    border-radius: 5px;
 }
