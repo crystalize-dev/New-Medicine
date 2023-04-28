@@ -63,6 +63,7 @@
 
     background: var(--lighterGray-color);
     border: 2px solid var(--lighterGray-color);
+    border-radius: 50%;
 
     cursor: pointer;
     transition: background 0.1s ease 0s;
